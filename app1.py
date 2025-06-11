@@ -14,7 +14,7 @@ target_layers = [classifier_model.model[-2]]
 class_names = list(model.names.values())
 
 # App UI
-st.title("🍇 Grape Leaf Disease Detector with Grad-CAM")
+st.title("🍇 Grape Leaf Disease Detector with YOLOv11+ XAI")
 st.markdown("""
 Welcome to the **Grape Leaf Disease Detector**!  
 This app uses a YOLOv11-based deep learning model to **detect diseases in grape leaves** from an uploaded image.
@@ -25,7 +25,6 @@ This app uses a YOLOv11-based deep learning model to **detect diseases in grape 
 - Leaf blight  
 - Healthy  
 """)
-st.markdown("Upload an image of a **grape leaf** to identify its disease class.")
 
 uploaded_file = st.file_uploader("📤 Upload a grape leaf image", type=["jpg", "jpeg", "png"])
 
@@ -63,3 +62,5 @@ if uploaded_file:
         grayscale_cam = cam(input_tensor=input_tensor, targets=[ClassifierOutputTarget(pred_class_id)])[0]
         cam_image = show_cam_on_image(rgb_img, grayscale_cam, use_rgb=True)
         st.image(cam_image, caption="Grad-CAM Heatmap", use_container_width=True)
+        st.markdown("Developed by Ankit khandelwal")
+
