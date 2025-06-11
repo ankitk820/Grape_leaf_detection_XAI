@@ -1,0 +1,8 @@
+streamlit
+ultralytics
+opencv-python-headless
+pillow
+torch
+matplotlib
+numpy
+grad-cam
