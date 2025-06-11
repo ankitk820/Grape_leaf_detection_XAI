@@ -62,4 +62,4 @@ if uploaded_file:
         cam = GradCAM(model=classifier_model, target_layers=target_layers)
         grayscale_cam = cam(input_tensor=input_tensor, targets=[ClassifierOutputTarget(pred_class_id)])[0]
         cam_image = show_cam_on_image(rgb_img, grayscale_cam, use_rgb=True)
-        st.image(cam_image, caption="Grad-CAM Heatmap", use_column_width=True)
+        st.image(cam_image, caption="Grad-CAM Heatmap", use_container_width=True)
