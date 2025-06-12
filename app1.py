@@ -45,7 +45,7 @@ if uploaded_file:
     confidence = result.probs.data[pred_class_id].item()
 
     # Check confidence threshold
-    CONF_THRESHOLD = 0.8  # Adjust as needed
+    CONF_THRESHOLD = 0.9  # Adjust as needed
     if confidence < CONF_THRESHOLD:
         st.error("⚠️ This image does not appear to be a grape leaf or is unclear. Please upload a valid grape leaf image.")
     else:
